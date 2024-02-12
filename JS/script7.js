@@ -19,18 +19,22 @@ fetch(apiUrl)
         //const cell = data.Table.Row[0].Cell;
         const cell = elementData.Cell;
         const content = `
+        <h1>Element Properties</h1>
         <h2>${cell[2]}</h2>
-      <p>Standard State: ${cell[11]}</p>
-      <p>Electron Configuration: ${cell[5]}</p>
-      <p>Electronegativity: ${cell[6]}</p>
-      <p>Ionisation Energy: ${cell[8]}</p>
-      <p>Electron Affinity: ${cell[9]}</p>
-      <p>Oxidation States: ${cell[10]}</p>
-      <p>Melting Point: ${cell[12]} K</p>
-      <p>Boiling Point: ${cell[13]} K</p>
-      <p>Density: ${cell[14]}</p>
-      <p>Atomic Radius: ${cell[7]}</p>
-      <p>Year Discovered: ${cell[16]}</p>
+        <ul>
+        <li>Standard State: <span>${cell[11]}</span></li>
+      <li>Electron Configuration: <span>${cell[5]}</span></li>
+      <li>Electronegativity: <span>${cell[6]}<span></li>
+      <li>Ionisation Energy: <span>${cell[8]} eV</span</li>
+      <li>Electron Affinity: <span>${cell[9]} eV</span></li>
+      <li>Oxidation States: <span>${cell[10]}</span></li>
+      <li>Melting Point: <span>${cell[12]} K</span></li>
+      <li>Boiling Point: <span>${cell[13]} K</span></li>
+      <li>Density: <span>${cell[14]}g/cm³</span></li>
+      <li>Atomic Radius: <span>${cell[7]} pm</span></li>
+      <li>Year Discovered: <span>${cell[16]}</span></li>
+        </ul>
+      
       `;
       elementProperty.innerHTML = content;
     } else {

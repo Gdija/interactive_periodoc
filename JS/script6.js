@@ -157,8 +157,10 @@
 //       console.error('Fetch error:', error);
 //     });
   
-
-
+//function to display element page
+function openElementProperties(atomicNumber, blockId) {
+  window.open(`indexelement.html?atomicNumber=${atomicNumber}&blockId=${blockId}`, '_blank');
+}
 
 
 // Function to create table rows for specified atomic numbers
@@ -178,6 +180,8 @@ function createTableRows(elements, elementsList) {
     tdAtomicNumber.innerHTML = cell[0];
     tdAtomicNumber.style.textAlign = "start";
     tdAtomicNumber.style.fontWeight = "bold"
+    // //add onclick event
+    // tdAtomicNumber.onclick = () => openElementProperties(cell[0]);
 
     const tdSymbol = document.createElement('td');
     tdSymbol.innerHTML = cell[1];
@@ -205,6 +209,12 @@ function createTableRows(elements, elementsList) {
     table.appendChild(trSymbol);
     table.appendChild(trName);
     table.appendChild(trMass);
+
+    const blockId = elementsList.id.replace('myTable', '');
+
+    table.addEventListener('click', function () {
+      openElementProperties(cell[0], blockId);
+    });
 
     elementsList.appendChild(table);
   });
